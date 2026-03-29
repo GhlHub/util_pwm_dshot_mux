@@ -8,8 +8,9 @@ The block is intended for AMD/Xilinx devices, with the current target use case b
 
 ## Design Summary
 
-- `pad_a` is driven through an `IOBUFT` and connects to pin A of an external `SN74LVC1T45`.
+- `pad_a` is driven through an `IOBUF` and connects to pin A of an external `SN74LVC1T45`.
 - `pad_dir` is driven through an `OBUF` and connects to the level shifter `DIR` pin.
+- `rstn` is an active-low reset input.
 - `select_dshot=0` selects the PWM receive-only path.
 - `select_dshot=1` selects the bidirectional DShot path.
 
@@ -34,7 +35,7 @@ The module was syntax-checked with:
 iverilog -g2012 -t null -s util_pwm_dshot_mux <primitive_stubs> rtl/util_pwm_dshot_mux.sv
 ```
 
-Local stubs were used for `IOBUFT` and `OBUF` because Xilinx simulation libraries are not part of this repository.
+Local stubs were used for `IOBUF` and `OBUF` because Xilinx simulation libraries are not part of this repository.
 
 ## Current Layout
 

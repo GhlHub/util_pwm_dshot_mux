@@ -25,7 +25,7 @@ set core [ipx::current_core]
 
 set_property name util_pwm_dshot_mux $core
 set_property display_name {Utility PWM / DShot Mux} $core
-set_property description {PWM input and bidirectional DShot mux around IOBUFT/OBUF with external SN74LVC1T45 direction timing.} $core
+set_property description {PWM input and bidirectional DShot mux around IOBUF/OBUF with external SN74LVC1T45 direction timing.} $core
 set_property vendor_display_name {GHL} $core
 set_property supported_families {spartanuplus Production} $core
 

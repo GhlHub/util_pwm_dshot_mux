@@ -4,7 +4,7 @@ module util_pwm_dshot_mux #(
     parameter bit DIR_B_TO_A           = 1'b0
 ) (
     input  logic clk,
-    input  logic rst,
+    input  logic rstn,
     input  logic select_dshot,
 
     output logic pwm_in,
@@ -130,14 +130,14 @@ module util_pwm_dshot_mux #(
     end
 
     always_ff @(posedge clk) begin
-        if (rst) begin
+        if (!rstn) begin
             state_q <= STATE_PWM_RX;
         end else begin
             state_q <= state_d;
         end
     end
 
-    IOBUFT data_iobuf_inst (
+    IOBUF data_iobuf_inst (
         .I(pad_o),
         .O(pad_i),
         .T(pad_t),

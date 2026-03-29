@@ -7,7 +7,7 @@
 
 The intended external connection is:
 
-- FPGA `IOBUFT` pad to pin A of an `SN74LVC1T45`
+- FPGA `IOBUF` pad to pin A of an `SN74LVC1T45`
 - FPGA `OBUF` output to the level shifter `DIR` pin
 
 ## Files
@@ -22,7 +22,7 @@ The intended external connection is:
 Inputs:
 
 - `clk`
-- `rst`
+- `rstn`
 - `select_dshot`
 - `dshot_out`
 - `dshot_oeb`
@@ -55,11 +55,11 @@ Transmit entry sequence:
 
 1. Set `DIR` for `A -> B`
 2. Wait one clock
-3. Enable the `IOBUFT` output driver
+3. Enable the `IOBUF` output driver
 
 Receive return sequence:
 
-1. Disable the `IOBUFT` output driver
+1. Disable the `IOBUF` output driver
 2. Wait one clock
 3. Set `DIR` for `B -> A`
 
@@ -74,7 +74,8 @@ This protects the external level shifter during direction changes.
 ## Notes
 
 - The inactive internal input is driven low.
-- The module uses Xilinx primitives `IOBUFT` and `OBUF`.
+- The module uses Xilinx primitives `IOBUF` and `OBUF`.
+- `rstn` is an active-low reset.
 - Reset returns the block to PWM receive mode.
 
 ## Vivado IP Packaging
