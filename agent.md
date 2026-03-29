@@ -39,5 +39,8 @@ Local stubs were used for `IOBUFT` and `OBUF` because Xilinx simulation librarie
 ## Current Layout
 
 - `rtl/`: synthesizable source
+- `ip_repo/`: packaged Vivado IP core collateral
+- `package_ip.tcl`: Vivado IP packager script
+- `package_ip.sh`: wrapper script to regenerate `ip_repo/`
 
-No testbench or Vivado IP packaging collateral exists yet in this repository.
+There is still no testbench in this repository.

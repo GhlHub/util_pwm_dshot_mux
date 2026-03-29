@@ -13,6 +13,7 @@ The intended external connection is:
 ## Files
 
 - [`rtl/util_pwm_dshot_mux.sv`](./rtl/util_pwm_dshot_mux.sv)
+- [`ip_repo/util_pwm_dshot_mux_1.0/component.xml`](./ip_repo/util_pwm_dshot_mux_1.0/component.xml)
 - [`package_ip.tcl`](./package_ip.tcl)
 - [`package_ip.sh`](./package_ip.sh)
 
@@ -88,3 +89,5 @@ This creates:
 
 - `ip_repo/util_pwm_dshot_mux_1.0/component.xml`
 - copied HDL and XGUI collateral under `ip_repo/util_pwm_dshot_mux_1.0/`
+
+The packaged IP repository entry is already checked into this repository.
